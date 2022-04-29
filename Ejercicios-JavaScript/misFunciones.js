@@ -1,7 +1,7 @@
 /**
  * Conversion de unidades, de metros, pulgadas, pies y yardas.
  * @method cambiarUnidades
- * @param {sitring} id - El id de los inputs de metros, pulgadas, pies o yardas.
+ * @param {string} id - El id de los inputs de metros, pulgadas, pies o yardas.
  * @param {number} valor - El valor de los inputs de metros, pulgadas, pies o yardas.
  * @return
  */
@@ -31,6 +31,20 @@ function cambiarUnidades(id, valor){
         document.lasUnidades.unid_pie.value=3*valor;
     }
 }
+
+function convertirGR(id){
+    var grad, rad;
+    if (id=="grados"){
+        grad=document.getElementById("grados".value); /*obtiene el valor que se ingresa en el campo y se lo asigna a grado */
+        rad=(grad*Math.PI)/180;
+    }else if(id=="radianes"){
+        rad=document.getElementById("radianes".value);
+        grad=(rad*180)/Math.PI;
+    }
+    grad=document.getElementById("grados".value);
+    rad=document.getElementById("radianes".value);
+}
+
 /*function dibujarCirCuad(){
     var canvas = document.getElementById(elementid: "myCanvas");
     var ctx = canvas.getContex("2d");
