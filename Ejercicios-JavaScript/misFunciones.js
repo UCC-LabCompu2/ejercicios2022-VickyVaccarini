@@ -45,6 +45,14 @@ function convertirGR(id){
     rad=document.getElementById("radianes".value);
 }
 
+function mostrar_ocultar(valorMO){
+    if(valorMO=="val_mostrar"){
+        document.getElementById("divMO").style.display='block';
+    }else if(valorMO=="val_ocultar"){
+        document.getElementById("divMO").style.display='none';
+    }
+}
+
 /*function dibujarCirCuad(){
     var canvas = document.getElementById(elementid: "myCanvas");
     var ctx = canvas.getContex("2d");
