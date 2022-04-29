@@ -6,9 +6,11 @@
  * @return Valor que retorna
  */
 
+
+
 function dibujarCirCuad(){
     var canvas = document.getElementById(elementid: "myCanvas");
-    var ctx = canvas.getContext(contextld="2d");
+    var ctx = canvas.getContex("2d");
 
     ctx.fillStyle ="#333899";
     ctx.fillRect(x:0, y:0, w:40, h:40);
