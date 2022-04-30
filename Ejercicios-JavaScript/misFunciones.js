@@ -53,6 +53,35 @@ function mostrar_ocultar(valorMO){
     }
 }
 
+function calcularSuma(){
+    var num1, num2;
+    num1=Number(document.getElementById("sum_num1")[0].value); /*diferenciar un elemento de otro se necesita indicar el indice. si hay un solo elemento se pone 0*/
+    num2=document.getElementById("sum_num2")[0].value;
+    document.getElementsByName("sum_total")[0].value=num1+Number(num2);
+}
+
+function calcularResta(){
+    var num1, num2;
+    num1=Number(document.getElementById("res_num1")[0].value);
+    num2=document.getElementById("res_num2")[0].value;
+    document.getElementsByName("res_total")[0].value=num1-Number(num2);
+}
+
+function calcularMult(){
+    var num1, num2;
+    num1=document.getElementById("mul_num1")[0].value;
+    num2=document.getElementById("mul_num2")[0].value;
+    document.getElementsByName("mul_total")[0].value=Number(num1)*Number(num2);
+}
+
+function calcularDiv(){
+    var num1, num2;
+    num1=document.getElementById("div_num1")[0].value;
+    num2=document.getElementById("div_num2")[0].value;
+    document.getElementsByName("div_total")[0].value=Number(num1)/Number(num2);
+}
+
+
 /*function dibujarCirCuad(){
     var canvas = document.getElementById(elementid: "myCanvas");
     var ctx = canvas.getContex("2d");
