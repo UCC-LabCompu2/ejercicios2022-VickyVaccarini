@@ -158,7 +158,6 @@ function cargarLocalStorage(){
 }
 
 
-
 function dibujarCirCuad(){
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
