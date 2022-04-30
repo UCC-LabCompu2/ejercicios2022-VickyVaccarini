@@ -162,7 +162,17 @@ function cargarLocalStorage(){
 function dibujarCirCuad(){
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
+    var xMax = canvas.width;
 
+    var yMax = canvas.height; /*usar la esquina inferior, saber el alto maximo*/
+    var margen = 5;
     ctx.fillStyle ="#333899";
-    ctx.fillRect(x=0, y=0, width=40, height=40);
+    ctx.fillRect(x=0+margen, y=yMax-40-margen, width=40, height=40);
+
+    ctx.arc(x=xMax/2, y=yMax/2, radius=20, startAngle=0, endAngle=2*Math.PI);
+    ctx.stroke(); /*dibujar el borde del circulo*/
+    ctx.fillStyle ="#ac176a";
+    ctx.fill(); /*pintar el circulo*/
 }
+
+
