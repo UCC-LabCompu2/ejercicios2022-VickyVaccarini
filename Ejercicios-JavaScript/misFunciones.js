@@ -140,6 +140,26 @@ function cargarResultado(){
    /* console.log(urlComp);*/
 }
 
+function guardarLocalStorage(){
+    let distancia, unidad;
+    distancia=document.getElementById('distancia').value;
+    unidad=document.getElementsByName('unidades')[0].value;
+    localStorage.setItem("distanciaLS", distancia);
+    localStorage.setItem("unidadesLS", unidad);
+    window.open('2_web.html');
+}
+
+function cargarLocalStorage(){
+    let cant, un;
+    cant=localStorage.getItem("distanciaLS");
+    un=localStorage.getItem("unidadesLS");
+
+    document.getElementById("dist").value=cant+" "+un;
+}
+
+
+
+
 /*function dibujarCirCuad(){
     var canvas = document.getElementById(elementid: "myCanvas");
     var ctx = canvas.getContex("2d");
