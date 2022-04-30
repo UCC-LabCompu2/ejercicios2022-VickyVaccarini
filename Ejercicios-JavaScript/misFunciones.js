@@ -159,11 +159,10 @@ function cargarLocalStorage(){
 
 
 
-
-/*function dibujarCirCuad(){
-    var canvas = document.getElementById(elementid: "myCanvas");
-    var ctx = canvas.getContex("2d");
+function dibujarCirCuad(){
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
 
     ctx.fillStyle ="#333899";
-    ctx.fillRect(x:0, y:0, w:40, h:40);
-}*/
+    ctx.fillRect(x=0, y=0, width=40, height=40);
+}
