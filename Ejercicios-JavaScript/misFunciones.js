@@ -175,3 +175,35 @@ function dibujarCirCuad(){
 }
 
 
+var bandera; /*bandera global*/
+function dibujar(event){
+    var canvas = document.getElementById("canvasAdibujar");
+    var ctx = canvas.getContext("2d");
+
+    /*posicion del mouse*/
+    var posX = event.clientX;
+    var posY = event.clientY;
+    console.log(posX, posY);
+
+    canvas.onmousedown = function(){
+        bandera = true;
+    }
+    canvas.onmouseup = function(){
+        bandera = false;
+    }
+
+    if(bandera){
+        /*dibujar lineas sin preocuparse si el mouse esta presionado o no*/
+        ctx.fillRect(x=posX, y=posY, width=5, height=5);
+        ctx.fill;
+    }
+}
+
+function limpiarCanvas(){
+    var canvas = document.getElementById("canvasAdibujar");
+    var ctx = canvas.getContext("2d");
+
+    canvas.width = canvas.width;
+}
+
+
