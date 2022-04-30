@@ -218,7 +218,7 @@ function dibujarCuadriculado(){
     for(var i=0; i<alturaMax;){
         ctx.moveTo(0, i);
         ctx.lineTo(anchoMax, i);
-        ctx.strokeStyle = "#9494e7";
+        ctx.strokeStyle = "#b4b4fc";
         ctx.stroke();
         i=i+20;
     }
@@ -229,7 +229,7 @@ function dibujarCuadriculado(){
     for(var i=0; i<anchoMax;){
         ctx.moveTo(i, 0);
         ctx.lineTo(i, alturaMax);
-        ctx.strokeStyle = "#9494e7";
+        ctx.strokeStyle = "#b4b4fc";
         ctx.stroke();
         i=i+20;
     }
@@ -242,6 +242,14 @@ function dibujarCuadriculado(){
         ctx.strokeStyle = "#f52a32";
         ctx.stroke();
         i=i+20;
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.moveTo(anchoMax/2, 0)
+    ctx.lineTo(anchoMax/2, alturaMax)
+    ctx.strokeStyle = "#f52a32";
+    ctx.stroke();
+    i=i+20;
     ctx.closePath();
 }
 
