@@ -239,7 +239,7 @@ function dibujarCuadriculado(){
     ctx.beginPath();
         ctx.moveTo(0, alturaMax/2)
         ctx.lineTo(anchoMax, alturaMax/2)
-        ctx.strokeStyle = "#f52a32";
+        ctx.strokeStyle = #f52a32;
         ctx.stroke();
         i=i+20;
     ctx.closePath();
