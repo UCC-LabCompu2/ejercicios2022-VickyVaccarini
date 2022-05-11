@@ -74,10 +74,10 @@ function cambiarUnidades(id, valor){
 
 function convertirGR(id){
     var grad, rad;
-    if (id==="grados"){
+    if (id === "grados"){
         grad=document.getElementById("grados".value); /*obtiene el valor que se ingresa en el campo y se lo asigna a grado */
         rad=(grad*Math.PI)/180;
-    }else if(id==="radianes"){
+    }else if(id === "radianes"){
         rad=document.getElementById("radianes".value);
         grad=(rad*180)/Math.PI;
     }
@@ -97,7 +97,7 @@ function calcularSuma(){
     var num1, num2;
     num1=Number(document.getElementById("sum_num1")[0].value); /*diferenciar un elemento de otro se necesita indicar el indice. si hay un solo elemento se pone 0*/
     num2=Number(document.getElementById("sum_num2")[0].value);
-    document.getElementsByName("sum_total")[0].innerHTML=num1+num2; /*innerHTML sirve para recuperar el contenido actual de un contenedor o insertar nuevo contenido en ese contenedor*/
+    document.getElementsByName("sum_total")[0].innerHTML=sum_num1+sum_num2; /*innerHTML sirve para recuperar el contenido actual de un contenedor o insertar nuevo contenido en ese contenedor*/
 }
 
 function calcularResta(){
