@@ -18,7 +18,7 @@ function cambiarUnidades (id, valor) {
         pulgada = "";
         pie = "";
         yarda = "";
-    } else if (id==="metro"){
+    } else if (id === "metro"){
         metro = valor;
         pulgada = 39.3701*valor;
         pie = 3.28084*valor;
@@ -28,12 +28,12 @@ function cambiarUnidades (id, valor) {
         metro = 0.0254*valor;
         pie = 0.0833333*valor;
         yarda = 0.0277778*valor;
-    } else if (id==="yarda"){
+    } else if (id === "yarda"){
         yarda = valor;
         metro = 0.9144*valor;
         pulgada = 36*valor;
         pie = 3*valor;
-    } else if (id==="pie"){
+    } else if (id === "pie"){
         pie = valor;
         metro = 0.3048*valor;
         pulgada = 12*valor;
@@ -86,7 +86,7 @@ function convertirGR(id){
 }
 
 function mostrar_ocultar(valorMO){
-    if(valorMO==="val_mostrar"){
+    if(valorMO === "val_mostrar"){
         document.getElementById("divMO").style.display='block';
     }else if(valorMO==="val_ocultar"){
         document.getElementById("divMO").style.display='none';
