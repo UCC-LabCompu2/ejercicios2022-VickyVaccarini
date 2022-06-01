@@ -13,32 +13,32 @@
     <h1>Operaciones Matemáticas</h1>
     <form class="operacionesMat">
         <p>
-            <input id="nums1" type="text" name="sum_num1" onchange="calcularSuma()">
+            <input id="nums1" type="text" name="sum_num1" onchange="fnSuma()">
             +
-            <input id="nums2" type="text" name="sum_num2" onchange="calcularSuma()">
+            <input id="nums2" type="text" name="sum_num2" onchange="fnSuma()">
             =
-            <span id="totalS" type="text" name="sum_total"></span>
+            <input id="totalS" type="text" name="sum_total" disabled>
         </p>
         <p>
-            <input id="numr1" type="text" name="res_num1" onchange="calcularResta()">
+            <input id="numr1" type="text" name="res_num1" onchange="fnResta()">
             -
-            <input id="numr2" type="text" name="res_num2" onchange="calcularResta()">
+            <input id="numr2" type="text" name="res_num2" onchange="fnResta()">
             =
-            <span id="totalR" type="text" name="res_total"></span>
+            <input id="totalR" type="text" name="res_total" disabled>
         </p>
         <p>
-            <input id="numm1" type="text" name="mul_num1" onchange="calcularMult()">
+            <input id="numm1" type="text" name="mul_num1" onchange="fnProducto()">
             x
-            <input id="numm2" type="text" name="mul_num2" onchange="calcularMult()">
+            <input id="numm2" type="text" name="mul_num2" onchange="fnProducto()">
             =
-            <span id="totalM" type="text" name="mul_total"></span>
+            <input id="totalM" type="text" name="mul_total" disabled>
         </p>
         <p>
-            <input id="numd1" type="text" name="div_num1" onchange="calcularDiv()">
+            <input id="numd1" type="text" name="div_num1" onchange="fnDivision()">
             /
-            <input id="numd2" type="text" name="div_num2" onchange="calcularDiv()">
+            <input id="numd2" type="text" name="div_num2" onchange="fnDivision()">
             =
-            <span id="totalD" type="text" name="div_total"></span>
+            <input id="totalD" type="text" name="div_total" disabled>
         </p>
     </form>
 </div>

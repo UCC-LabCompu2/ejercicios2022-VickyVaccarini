@@ -1,15 +1,15 @@
 /**
- * Conversion de unidades, de metros, pulgadas, pies y yardas.
+ * Conversion de unidades
  * @method cambiarUnidades
- * @param {string} id - El id de los inputs de metros, pulgadas, pies o yardas.
- * @param {number} valor - El valor de los inputs de metros, pulgadas, pies o yardas.
+ * @param {string} id
+ * @param {number} valor 
  * @return
  */
 function cambiarUnidades (id, valor) {
     var metro, pulgada, pie, yarda;
 
-    if(valor.includes(",")){ /*include es para ver si el valor ingresado incluye , */
-        valor=valor.replace(",", "."); /*aca se reemplaza la , por el .*/
+    if(valor.includes(",")){
+        valor=valor.replace(",", ".");
     }
 
     if (isNaN(valor)){
@@ -18,7 +18,7 @@ function cambiarUnidades (id, valor) {
         pulgada = "";
         pie = "";
         yarda = "";
-    } else if (id === "metro"){
+    } else if (id ==="metro"){
         metro = valor;
         pulgada = 39.3701*valor;
         pie = 3.28084*valor;
@@ -28,24 +28,24 @@ function cambiarUnidades (id, valor) {
         metro = 0.0254*valor;
         pie = 0.0833333*valor;
         yarda = 0.0277778*valor;
-    } else if (id === "yarda"){
+    } else if (id ==="yarda"){
         yarda = valor;
         metro = 0.9144*valor;
         pulgada = 36*valor;
         pie = 3*valor;
-    } else if (id === "pie"){
+    } else if (id ==="pie"){
         pie = valor;
         metro = 0.3048*valor;
         pulgada = 12*valor;
         yarda = 0.333333*valor;
     }
-    document.lasUnidades.unid_metro.value=Math.round(metro*100)/100; /*Math.round() es para redondear*/
-    document.lasUnidades.unid_pulgada.value=Math.round(pulgada*100)/100; /*  *100)/100 es para que tome 2 decimales*/
+    document.lasUnidades.unid_metro.value=Math.round(metro*100)/100;
+    document.lasUnidades.unid_pulgada.value=Math.round(pulgada*100)/100;
     document.lasUnidades.unid_pie.value=Math.round(pie*100)/100;
     document.lasUnidades.unid_yarda.value=Math.round(yarda*100)/100;
 }
 
-/*IGUAL QUE EL DE ARRIBA PERO ESTA REFACTORIZADO PARA QUE SEA MAS LEGITIMO
+/*
 function cambiarUnidades(id, valor){
     if(isNaN(valor)){
         alert("Se ingresó un valor inválido");
@@ -53,19 +53,19 @@ function cambiarUnidades(id, valor){
         document.lasUnidades.unid_pulgada.value="";
         document.lasUnidades.unid_pie.value="";
         document.lasUnidades.unid_yarda.value="";
-    }else if(id==="metro"){
+    }else if(id ==="metro"){
         document.lasUnidades.unid_pulgada.value=39.3701*valor;
         document.lasUnidades.unid_pie.value=3.28084*valor;
         document.lasUnidades.unid_yarda.value=1.09361*valor;
-    }else if (id==="pulgada"){
+    }else if (id ==="pulgada"){
         document.lasUnidades.unid_metro.value=0.0254*valor;
         document.lasUnidades.unid_pie.value=0.833333*valor;
         document.lasUnidades.unid_yarda.value=0.277778*valor;
-    }else if(id==="pie"){
+    }else if(id ==="pie"){
         document.lasUnidades.unid_metro.value=0.3048*valor;
         document.lasUnidades.unid_pulgada.value=12*valor;
         document.lasUnidades.unid_yarda.value=0.333333*valor;
-    }else if(id==="yarda"){
+    }else if(id ==="yarda"){
         document.lasUnidades.unid_metro.value=0.9144*valor;
         document.lasUnidades.unid_pulgada.value=36*valor;
         document.lasUnidades.unid_pie.value=3*valor;
@@ -74,10 +74,10 @@ function cambiarUnidades(id, valor){
 
 function convertirGR(id){
     var grad, rad;
-    if (id === "grados"){
-        grad=document.getElementById("grados".value); /*obtiene el valor que se ingresa en el campo y se lo asigna a grado */
+    if (id ==="grados"){
+        grad=document.getElementById("grados".value); 
         rad=(grad*Math.PI)/180;
-    }else if(id === "radianes"){
+    }else if(id ==="radianes"){
         rad=document.getElementById("radianes".value);
         grad=(rad*180)/Math.PI;
     }
@@ -86,39 +86,66 @@ function convertirGR(id){
 }
 
 function mostrar_ocultar(valorMO){
-    if(valorMO === "val_mostrar"){
+    if(valorMO ==="val_mostrar"){
         document.getElementById("divMO").style.display='block';
-    }else if(valorMO==="val_ocultar"){
+    }else if(valorMO ==="val_ocultar"){
         document.getElementById("divMO").style.display='none';
     }
 }
 
-function calcularSuma(){
-    var num1, num2;
-    num1=Number(document.getElementById("sum_num1")[0].value); /*diferenciar un elemento de otro se necesita indicar el indice. si hay un solo elemento se pone 0*/
-    num2=Number(document.getElementById("sum_num2")[0].value);
-    document.getElementsByName("sum_total")[0].innerHTML=sum_num1+sum_num2; /*innerHTML sirve para recuperar el contenido actual de un contenedor o insertar nuevo contenido en ese contenedor*/
+function fnSuma()
+{
+    let num1 , num2;
+
+    num1 = document.getElementById("nums1").value;
+    num2 = document.getElementById("nums2").value;
+
+    document.getElementById("totalS").value = Number(num1) + Number(num2);
 }
 
-function calcularResta(){
-    var num1, num2;
-    num1=Number(document.getElementById("res_num1")[0].value);
-    num2=document.getElementById("res_num2")[0].value;
-    document.getElementsByName("res_total")[0].innerHTML=num1-Number(num2);
+/**
+ * Resta dos valores ingresados por el usuario
+ * @method fnResta
+ */
+
+function fnResta()
+{
+    let num1 , num2;
+
+    num1 = document.getElementById("numr1").value;
+    num2 = document.getElementById("numr2").value;
+
+    document.getElementById("totalR").value = Number(num1) - Number(num2);
 }
 
-function calcularMult(){
-    var num1, num2;
-    num1=document.getElementById("mul_num1")[0].value;
-    num2=document.getElementById("mul_num2")[0].value;
-    document.getElementsByName("mul_total")[0].innerHTML=Number(num1)*Number(num2);
+/**
+ * Multiplica dos valores ingresados por el usuario
+ * @method fnProducto
+ */
+
+function fnProducto()
+{
+    let num1 , num2;
+
+    num1 = document.getElementById("numm1").value;
+    num2 = document.getElementById("numm2").value;
+
+    document.getElementById("totalM").value = Number(num1) * Number(num2);
 }
 
-function calcularDiv(){
-    var num1, num2;
-    num1=document.getElementById("div_num1")[0].value;
-    num2=document.getElementById("div_num2")[0].value;
-    document.getElementsByName("div_total")[0].innerHTML=Number(num1)/Number(num2);
+/**
+ * Divide dos valores ingresados por el usuario
+ * @method fnDivision
+ */
+
+function fnDivision()
+{
+    let num1 , num2;
+
+    num1 = document.getElementById("numd1").value;
+    num2 = document.getElementById("numd2").value;
+
+    document.getElementById("totalD").value = Number(num1) / Number(num2);
 }
 
 function cargarWeb(){
@@ -163,13 +190,13 @@ function dibujarCirCuad(){
     var ctx = canvas.getContext("2d");
     var xMax = canvas.width;
 
-    var yMax = canvas.height; /*usar la esquina inferior, saber el alto maximo*/
+    var yMax = canvas.height;
     var margen = 5;
     ctx.fillStyle ="#333899";
     ctx.fillRect(x=0+margen, y=yMax-40-margen, width=40, height=40);
 
     ctx.arc(x=xMax/2, y=yMax/2, radius=20, startAngle=0, endAngle=2*Math.PI);
-    ctx.stroke(); /*dibujar el borde del circulo*/
+    ctx.stroke(); /*borde del circulo*/
     ctx.fillStyle ="#ac176a";
     ctx.fill(); /*pintar el circulo*/
 }
@@ -193,7 +220,7 @@ function dibujar(event){
     }
 
     if(bandera){
-        /*dibujar lineas sin preocuparse si el mouse esta presionado o no*/
+        /*mouse presionado o no*/
         ctx.fillRect(x=posX, y=posY, width=5, height=5);
         ctx.fill;
     }
@@ -213,7 +240,7 @@ function dibujarCuadriculado(){
     var anchoMax = canvas.width;
     var alturaMax = canvas.height;
 
-    /*dibujar lineas horizontales*/
+    /*horizontales*/
     ctx.beginPath();
     for(var i=0; i<alturaMax;){
         ctx.moveTo(0, i);
@@ -224,7 +251,7 @@ function dibujarCuadriculado(){
     }
     ctx.closePath();
 
-    /*dibujar lineas verticales*/
+    /*verticales*/
     ctx.beginPath();
     for(var i=0; i<anchoMax;){
         ctx.moveTo(i, 0);
@@ -235,11 +262,11 @@ function dibujarCuadriculado(){
     }
     ctx.closePath();
 
-    /* eje x*/
+    /*x*/
     ctx.beginPath();
         ctx.moveTo(0, alturaMax/2)
         ctx.lineTo(anchoMax, alturaMax/2)
-        ctx.strokeStyle = #f52a32;
+        ctx.strokeStyle = "#f52a32";
         ctx.stroke();
         i=i+20;
     ctx.closePath();
