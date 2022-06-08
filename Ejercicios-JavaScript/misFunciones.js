@@ -296,5 +296,29 @@ function dibujarImagen(posX, posY) {
 
 }
 
+x=0;
+dx=2; /*el auto se desplaza cada 2 pixeles*/
+
+function animarAuto() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    canvas.width = canvas.width /*limpiar el canvas*/
+
+    var img = new Image();
+    img.src = "images/auto.png";
+
+    img.onload = function (){
+        ctx.drawImage(img, x, 100);
+    }
+
+    if(x>canvas.width){
+        x=0;
+    }
+    x+=dx;
+
+
+}
+
 
 
