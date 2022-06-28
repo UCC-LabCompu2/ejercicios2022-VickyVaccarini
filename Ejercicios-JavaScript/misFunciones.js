@@ -308,17 +308,14 @@ function animarAuto() {
     var img = new Image();
     img.src = "images/auto.png";
 
-    img.onload = function (){
+    img.onload = function () {
         ctx.drawImage(img, x, 100);
     }
 
-    if(x>canvas.width){
-        x=0;
+    if (x > canvas.width) {
+        x = 0;
     }
-    x+=dx;
-
-
+    x += dx;
 }
-
 
 
